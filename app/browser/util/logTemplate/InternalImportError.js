@@ -5,6 +5,6 @@ export default class InternalImportError extends GenericObject {
     constructor(message, error, importedModulePath) {
         super("InternalImportError", message);
         this.error = error
-        this.importedModulePath = (isJson(importedModulePath) ? JSON.parse(importedModulePath) : importedModulePath)
+        this.importedModulePath = (isJson(importedModulePath) ? JSON.parse(importedModulePath) : importedModulePath);
     }
 }

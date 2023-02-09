@@ -5,7 +5,7 @@ export default class GenericStack extends GenericObject {
     constructor(name, message, stack) {
         super(name, message);
         if(typeof stack === "string"){
-            stack = stack
+            stack = stack;
         }
         this.stack = isJson(stack) ? JSON.parse(stack) : stack;
     }

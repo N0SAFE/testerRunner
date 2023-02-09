@@ -1,26 +1,31 @@
-// in test.browser.js
+// in module.browser.test.js
 
-depend("./test.js")
+depend(["./module.js", "module"])
 
 main()
 
-// in 1.js
+// in 1.browser.test.js
 
-depend("./test.browser.js", "./other.js") // this script is loaded everytime
+depend(["./module.browser.test.js", "moduleBrowserTest"], ["./other.js", "other"]) // this script is loaded everytime
 
-importNeed("./chain1.js"); // this script is not loaded in a first way
+use(["./chain1.js", "chain1"]); // this script is not loaded in a first way
 
 main(()=>{
-    // you can call your toBeImportable if the script is contained on the importNeed function
+    // you can call your toBeImportable if the script is contained on the use function
 })
 
-// in 2.js
+// in 2.browser.test.js
 
 const {
-    "./1.js": [testBrowser, other],
-} = depend(["./1.js", ["./test.browser.js", "./other.js"]]) // it will start the await for the test 1.js
+    "1": [moduleBrowserTest, other, chain1],
+} = depend(["./1.browser.test.js", "1", ["moduleBrowserTest", "other", "chain1"]]) // it will start the await for the test 1.browser.test.js
+// ou 
+const {
+    "1": [moduleBrowserTestp, otherp, chain1p],
+} = depend({path: "./1.browser.test.js", name: "1", import: ["moduleBrowserTest", "other", "chain1"]}) // it will start the await for the test 1.browser.test.js
 
-testBrowser // it contain an object of the module loaded by the test ./test.browser.js ({./test.js})
-other // it is the test loaded by the test 1.js 
+moduleBrowserTest // it contain an object of the module loaded by the test ./test.browser.test.js ({"module": [moduleObject]})
+other // it is the test loaded by the test 1.browser.test.js
+chain1 // it is the test laoded from 1.browser.test.js with the use method
 
-//  with that you can have a hierarchy
+// with that you can have a hierarchy

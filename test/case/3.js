@@ -1,1 +1,0 @@
-importNeed([["./chain1.browser.test.js", {name: "chain1"}]])

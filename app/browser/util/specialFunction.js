@@ -34,6 +34,10 @@ export function pathModuleTest(path) {
     h0xtyueiifhbc_PathModuleTest(new URL(window.h0xtyueiifhbc + "/../" + path).href);
 }
 
+export function depend(){
+    
+}
+
 // this function is used to import other module (like other test before starting this)
 export async function importNeed(arr) {
     let res = {};
@@ -49,11 +53,10 @@ export async function importNeed(arr) {
                 if (importTestPath.isOk) {
                     try {
                         res[name] = await import(importTestPath.pathModuleTest);
-                    } catch (e) {
+                    } catch {
                         console.log(importTestPath);
                         if (!window.h0xtyueiifhbc_TestIsFinish) {
                             console.trace("test is finish");
-                            console.error(e)
                             window.h0xtyueiifhbc_TestIsFinish = true;
                             h0xtyueiifhbc_ThrowError(
                                 new ImportError(
