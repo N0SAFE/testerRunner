@@ -1,0 +1,162 @@
+<style>
+    body {
+        padding: 0;
+        margin: 0;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+    
+    .waterfall-container {
+        position: absolute;
+        inset: 0;
+        padding: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        overflow-y: scroll;
+    }
+
+    .request-line {
+        display: flex;
+        align-items: center;
+        height: 20px;
+        margin-bottom: 10px;
+        background-color: lightgray;
+    }
+
+    .request-line.finished {
+        background-color: lightgreen;
+    }
+</style>
+
+<div class="waterfall-container"></div>
+
+<script>
+    class Waterfall {
+        max = 0
+        constructor() {
+            this.waterfallContainer = document.querySelector(".waterfall-container");
+            this.requests = [];
+            this.id = 0;
+        }
+
+        addRequest() {
+            if (this.requests.length === 0) this.firstRequestStartTime = performance.now();
+            const request = new Request(this);
+            this.requests.push({ id: this.id, request });
+            this.id++;
+        }
+
+        finishRequest(requestId) {
+            const request = this.requests.find((req) => req.id === requestId);
+            if (!request) return;
+
+            request.request.finishRequest();
+        }
+
+        stopRequest(requestId) {
+            const request = this.requests.find((req) => req.id === requestId);
+            if (!request) return;
+
+            clearInterval(request.request.intervalId);
+        }
+
+        clearRequests() {
+            this.requests.forEach((req) => {
+                clearInterval(req.request.intervalId);
+                req.request.line.remove();
+            });
+            this.requests.length = 0;
+        }
+        
+        scale = 1
+    }
+
+    class Request {
+        constructor(waterfall) {
+            this.startTime = performance.now();
+            this.finish = false;
+
+            this.line = document.createElement("div");
+            this.line.classList.add("request-line");
+            this.line.style.position = "relative";
+            waterfall.waterfallContainer.appendChild(this.line);
+
+            this.intervalId = setInterval(() => {
+                // console.log(waterfall.max)
+                
+                if (this.finish) {
+                    clearInterval(this.intervalId);
+                    waterfall.max = Math.max(100, ((performance.now() - this.startTime) + (this.startTime - waterfall.firstRequestStartTime)));
+                    const size = (performance.now() - this.startTime)
+                    const offsetSize = (this.startTime - waterfall.firstRequestStartTime)
+                    setInterval(() => {
+                        const width = size*100/waterfall.max;
+                        const widthAndOffset = (size + offsetSize)*100/waterfall.max;
+                        const xPosition = widthAndOffset - width;
+                        this.line.style.width = `${width}%`;
+                        this.line.style.left = `${xPosition}%`;
+                    }, 10);
+                    this.line.classList.add("finished");
+                } else {
+                    waterfall.max = Math.max(100, ((performance.now() - this.startTime) + (this.startTime - waterfall.firstRequestStartTime)));
+                    const size = (performance.now() - this.startTime)
+                    const offsetSize = (this.startTime - waterfall.firstRequestStartTime)
+                    const width = size*100/waterfall.max;
+                    const widthAndOffset = (size + offsetSize)*100/waterfall.max;
+                    const xPosition = widthAndOffset - width;
+                    this.line.style.width = `${width}%`;
+                    this.line.style.left = `${xPosition}%`;
+                }
+            }, 10);
+        }
+
+        finishRequest() {
+            this.finish = true;
+        }
+    }
+
+    const waterfall = new Waterfall();
+
+    // use the instance of the Waterfall class
+
+    setTimeout(() => {
+        waterfall.addRequest();
+
+        setTimeout(() => {
+            waterfall.addRequest();
+            waterfall.finishRequest(0);
+            setTimeout(() => {
+                waterfall.finishRequest(1);
+            }, 2000);
+                
+            setTimeout(()=>{
+                waterfall.addRequest();
+            }, 500)
+            
+            setTimeout(()=>{
+                waterfall.addRequest();
+            }, 1000)
+            
+            setTimeout(()=>{
+                waterfall.addRequest();
+            }, 1000)
+            
+            setTimeout(()=>{
+                waterfall.finishRequest(3);
+            }, 1500)
+            
+            setTimeout(()=>{
+                waterfall.finishRequest(4);
+            }, 2000)
+            
+            setTimeout(()=>{
+                waterfall.finishRequest(2);
+            }, 2500)
+        }, 100);
+    }, 2000);
+</script>

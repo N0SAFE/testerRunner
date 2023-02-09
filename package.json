@@ -1,0 +1,26 @@
+{
+    "name": "testerRunner",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "browser:test": "node app/server/index.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "loading-cli": "^1.1.0",
+        "ansi": "^0.3.1",
+        "circular-json": "^0.5.9",
+        "cli-progress": "^3.11.2",
+        "colors": "^1.4.0",
+        "glob": "^8.0.3",
+        "jest": "^29.1.2",
+        "json-cyclic": "^1.0.2",
+        "puppeteer": "^18.1.0",
+        "puppeteer-extra": "^3.3.4",
+        "puppeteer-extra-plugin-stealth": "^2.11.1",
+        "terminal-kit": "^2.11.6"
+    }
+}

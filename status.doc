@@ -1,0 +1,19 @@
+success: all test passed
+
+// error
+
+ImportError: the testModule fail to load is required externalModule (on the importNeed function)
+WrapError: an error is throwed into the wrap
+InternalImportError: this error is throwed when the testModule itSelf throw an error (when an error is throwed as the top level of the testModule)
+GenericError: generic error
+InternalError: error throwed in the testerRunner module
+
+
+TestFail: all the test has been run but an expect fail has been found
+
+
+// info
+starting with background yellow: this say that the module is in start (prepare all the function for test [main, describe, test, it, expect])
+imported with background yellow: this say that the importNeed function is in run
+running with bakground yellow: this say that the module is in run (run all the test)
+running with background red: this say that the module is in run but a test has already fail

@@ -1,0 +1,394 @@
+{
+    "tests": [
+        {
+            "parent": {
+                "tests": [
+                    "⏩tests.0"
+                ],
+                "directTests": [
+                    "⏩tests.0"
+                ],
+                "descriptor": "tet",
+                "parent": "⏩",
+                "childs": [
+                    "⏩tests.0"
+                ]
+            },
+            "status": "success",
+            "message": "expected 1 to be 1",
+            "args": [
+                1
+            ],
+            "expected": 1,
+            "functionName": "toBe"
+        },
+        {
+            "parent": {
+                "tests": [
+                    "⏩tests.1",
+                    {
+                        "parent": "⏩tests.1.parent",
+                        "status": "fail",
+                        "message": "expected 1 to be 5",
+                        "args": [
+                            5
+                        ],
+                        "expected": 1,
+                        "functionName": "toBe"
+                    },
+                    {
+                        "parent": "⏩tests.1.parent",
+                        "status": "success",
+                        "message": "expected null to be null",
+                        "args": [],
+                        "expected": null,
+                        "functionName": "toBeNull"
+                    }
+                ],
+                "directTests": [
+                    "⏩tests.1",
+                    {
+                        "parent": "⏩tests.1.parent",
+                        "status": "fail",
+                        "message": "expected 1 to be 5",
+                        "args": [
+                            5
+                        ],
+                        "expected": 1,
+                        "functionName": "toBe"
+                    },
+                    {
+                        "parent": "⏩tests.1.parent",
+                        "status": "success",
+                        "message": "expected null to be null",
+                        "args": [],
+                        "expected": null,
+                        "functionName": "toBeNull"
+                    }
+                ],
+                "descriptor": "tet2",
+                "parent": "⏩",
+                "childs": [
+                    "⏩tests.1",
+                    {
+                        "parent": "⏩tests.1.parent",
+                        "status": "fail",
+                        "message": "expected 1 to be 5",
+                        "args": [
+                            5
+                        ],
+                        "expected": 1,
+                        "functionName": "toBe"
+                    },
+                    {
+                        "parent": "⏩tests.1.parent",
+                        "status": "success",
+                        "message": "expected null to be null",
+                        "args": [],
+                        "expected": null,
+                        "functionName": "toBeNull"
+                    }
+                ]
+            },
+            "status": "fail",
+            "message": "expected 1 to be 2",
+            "args": [
+                2
+            ],
+            "expected": 1,
+            "functionName": "toBe"
+        },
+        {
+            "parent": {
+                "tests": [
+                    {
+                        "parent": "⏩tests.2.parent",
+                        "status": "fail",
+                        "message": "expected 1 to be 2",
+                        "args": [
+                            2
+                        ],
+                        "expected": 1,
+                        "functionName": "toBe"
+                    },
+                    "⏩tests.2",
+                    {
+                        "parent": "⏩tests.2.parent",
+                        "status": "success",
+                        "message": "expected null to be null",
+                        "args": [],
+                        "expected": null,
+                        "functionName": "toBeNull"
+                    }
+                ],
+                "directTests": [
+                    {
+                        "parent": "⏩tests.2.parent",
+                        "status": "fail",
+                        "message": "expected 1 to be 2",
+                        "args": [
+                            2
+                        ],
+                        "expected": 1,
+                        "functionName": "toBe"
+                    },
+                    "⏩tests.2",
+                    {
+                        "parent": "⏩tests.2.parent",
+                        "status": "success",
+                        "message": "expected null to be null",
+                        "args": [],
+                        "expected": null,
+                        "functionName": "toBeNull"
+                    }
+                ],
+                "descriptor": "tet2",
+                "parent": "⏩",
+                "childs": [
+                    {
+                        "parent": "⏩tests.2.parent",
+                        "status": "fail",
+                        "message": "expected 1 to be 2",
+                        "args": [
+                            2
+                        ],
+                        "expected": 1,
+                        "functionName": "toBe"
+                    },
+                    "⏩tests.2",
+                    {
+                        "parent": "⏩tests.2.parent",
+                        "status": "success",
+                        "message": "expected null to be null",
+                        "args": [],
+                        "expected": null,
+                        "functionName": "toBeNull"
+                    }
+                ]
+            },
+            "status": "fail",
+            "message": "expected 1 to be 5",
+            "args": [
+                5
+            ],
+            "expected": 1,
+            "functionName": "toBe"
+        },
+        {
+            "parent": {
+                "tests": [
+                    {
+                        "parent": "⏩tests.3.parent",
+                        "status": "fail",
+                        "message": "expected 1 to be 2",
+                        "args": [
+                            2
+                        ],
+                        "expected": 1,
+                        "functionName": "toBe"
+                    },
+                    {
+                        "parent": "⏩tests.3.parent",
+                        "status": "fail",
+                        "message": "expected 1 to be 5",
+                        "args": [
+                            5
+                        ],
+                        "expected": 1,
+                        "functionName": "toBe"
+                    },
+                    "⏩tests.3"
+                ],
+                "directTests": [
+                    {
+                        "parent": "⏩tests.3.parent",
+                        "status": "fail",
+                        "message": "expected 1 to be 2",
+                        "args": [
+                            2
+                        ],
+                        "expected": 1,
+                        "functionName": "toBe"
+                    },
+                    {
+                        "parent": "⏩tests.3.parent",
+                        "status": "fail",
+                        "message": "expected 1 to be 5",
+                        "args": [
+                            5
+                        ],
+                        "expected": 1,
+                        "functionName": "toBe"
+                    },
+                    "⏩tests.3"
+                ],
+                "descriptor": "tet2",
+                "parent": "⏩",
+                "childs": [
+                    {
+                        "parent": "⏩tests.3.parent",
+                        "status": "fail",
+                        "message": "expected 1 to be 2",
+                        "args": [
+                            2
+                        ],
+                        "expected": 1,
+                        "functionName": "toBe"
+                    },
+                    {
+                        "parent": "⏩tests.3.parent",
+                        "status": "fail",
+                        "message": "expected 1 to be 5",
+                        "args": [
+                            5
+                        ],
+                        "expected": 1,
+                        "functionName": "toBe"
+                    },
+                    "⏩tests.3"
+                ]
+            },
+            "status": "success",
+            "message": "expected null to be null",
+            "args": [],
+            "expected": null,
+            "functionName": "toBeNull"
+        }
+    ],
+    "childs": [
+        {
+            "tests": [
+                {
+                    "parent": "⏩childs.0",
+                    "status": "success",
+                    "message": "expected 1 to be 1",
+                    "args": [
+                        1
+                    ],
+                    "expected": 1,
+                    "functionName": "toBe"
+                }
+            ],
+            "directTests": [
+                {
+                    "parent": "⏩childs.0",
+                    "status": "success",
+                    "message": "expected 1 to be 1",
+                    "args": [
+                        1
+                    ],
+                    "expected": 1,
+                    "functionName": "toBe"
+                }
+            ],
+            "descriptor": "tet",
+            "parent": "⏩",
+            "childs": [
+                {
+                    "parent": "⏩childs.0",
+                    "status": "success",
+                    "message": "expected 1 to be 1",
+                    "args": [
+                        1
+                    ],
+                    "expected": 1,
+                    "functionName": "toBe"
+                }
+            ]
+        },
+        {
+            "tests": [
+                {
+                    "parent": "⏩childs.1",
+                    "status": "fail",
+                    "message": "expected 1 to be 2",
+                    "args": [
+                        2
+                    ],
+                    "expected": 1,
+                    "functionName": "toBe"
+                },
+                {
+                    "parent": "⏩childs.1",
+                    "status": "fail",
+                    "message": "expected 1 to be 5",
+                    "args": [
+                        5
+                    ],
+                    "expected": 1,
+                    "functionName": "toBe"
+                },
+                {
+                    "parent": "⏩childs.1",
+                    "status": "success",
+                    "message": "expected null to be null",
+                    "args": [],
+                    "expected": null,
+                    "functionName": "toBeNull"
+                }
+            ],
+            "directTests": [
+                {
+                    "parent": "⏩childs.1",
+                    "status": "fail",
+                    "message": "expected 1 to be 2",
+                    "args": [
+                        2
+                    ],
+                    "expected": 1,
+                    "functionName": "toBe"
+                },
+                {
+                    "parent": "⏩childs.1",
+                    "status": "fail",
+                    "message": "expected 1 to be 5",
+                    "args": [
+                        5
+                    ],
+                    "expected": 1,
+                    "functionName": "toBe"
+                },
+                {
+                    "parent": "⏩childs.1",
+                    "status": "success",
+                    "message": "expected null to be null",
+                    "args": [],
+                    "expected": null,
+                    "functionName": "toBeNull"
+                }
+            ],
+            "descriptor": "tet2",
+            "parent": "⏩",
+            "childs": [
+                {
+                    "parent": "⏩childs.1",
+                    "status": "fail",
+                    "message": "expected 1 to be 2",
+                    "args": [
+                        2
+                    ],
+                    "expected": 1,
+                    "functionName": "toBe"
+                },
+                {
+                    "parent": "⏩childs.1",
+                    "status": "fail",
+                    "message": "expected 1 to be 5",
+                    "args": [
+                        5
+                    ],
+                    "expected": 1,
+                    "functionName": "toBe"
+                },
+                {
+                    "parent": "⏩childs.1",
+                    "status": "success",
+                    "message": "expected null to be null",
+                    "args": [],
+                    "expected": null,
+                    "functionName": "toBeNull"
+                }
+            ]
+        }
+    ]
+}
