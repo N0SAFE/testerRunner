@@ -1,4 +1,4 @@
-await importNeed([["./chain2.browser.test.js", "chain2"]]);
+await depend("./chain2.browser.test.js")
 
 main(() => {
     

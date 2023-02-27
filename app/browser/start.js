@@ -2,13 +2,13 @@ import InternalImportError from "./util/logTemplate/InternalImportError.js";
 import InternalDoNotExistError from "./util/logTemplate/InternalDoNotExistError.js";
 import {ExpectMethods} from './util/jestFunctionReplicate/ExpectMethods/ExpectMethods.js';
 import { main } from './util/JestMethods.js'
-import { importNeed, pathModuleTest, requiredFiles } from "./util/specialFunction.js";
+import { depend, use, requiredFiles } from "./util/specialFunction.js";
 import iFunc from './util/iFunc.js'
 import { cycle } from "./util/bundle.js";
 
 window.main = main;
-window.importNeed = importNeed;
-window.pathModuleTest = pathModuleTest;
+window.depend = depend;
+window.use = use;
 window.requiredFiles = requiredFiles;
 window.iFunc = iFunc;
 window.ExpectMethods = ExpectMethods;

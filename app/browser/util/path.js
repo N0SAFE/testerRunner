@@ -1,3 +1,7 @@
-export function resolve(...path){
-    return new URL(...path.join('./')).href
+export function resolve(location, path){
+    try{
+        return new URL(path).href
+    }catch{
+        return new URL(location + "/../" + path).href
+    }
 }

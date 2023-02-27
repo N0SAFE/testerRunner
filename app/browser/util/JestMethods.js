@@ -28,7 +28,7 @@ export function expect(defaultVal) {
     return new ExpectMethods(defaultVal, expectWrap);
 }
 
-export function it(descriptor, callback) {
+export function it(descriptor, callback = function(){}) {
     if (!isFunction(callback)) {
         throw new Error("the callback must be a function");
     }
@@ -88,7 +88,7 @@ export function it(descriptor, callback) {
     return promise;
 }
 
-export function describe(descriptor, callback) {
+export function describe(descriptor, callback = function(){}) {
     if (!isFunction(callback)) {
         throw new Error("the callback must be a function");
     }
@@ -146,7 +146,7 @@ export function describe(descriptor, callback) {
     return promise;
 }
 
-export function test(descriptor, callback) {
+export function test(descriptor, callback = function(){}) {
     if (!isFunction(callback)) {
         throw new Error("the callback must be a function");
     }
@@ -209,7 +209,7 @@ export function test(descriptor, callback) {
     return promise;
 }
 
-export function main(callback) {
+export function main(callback = function(){}) {
     const mainWrap = new MainWrap();
 
     h0xtyueiifhbc_Start();
